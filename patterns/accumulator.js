@@ -22,7 +22,15 @@ export function sumToN(n) {
  * @returns `1` if n is 0
  */
 export function factorial(n) {
-  // TODO
+  if (typeof n !== "number") return NaN;
+  if (n < 0) return undefined;
+  if (n === 0) return 1;
+
+  let product = 1;
+  for (let i = 1; i <= n; i++) {
+    product *= i;
+  }
+  return product;
 }
 
 /**
@@ -31,9 +39,7 @@ export function factorial(n) {
  * @returns `null` if n is not a number
  * @returns `[]` if n is 0 or negative
  */
-export function buildNArray(n) {
-  // TODO
-}
+export function buildNArray(n) {}
 
 /**
  * @param {string[]} strings
@@ -48,7 +54,18 @@ export function getLongestString(strings) {
  * @returns {number} the number of students present
  */
 export function countPresent(attendance) {
-  // TODO
+  let numPresent = 0;
+
+  let i = 0;
+  while (i < attendance.length) {
+    const present = attendance[i];
+    if (present) {
+      numPresent += 1;
+    }
+    i += 1;
+  }
+
+  return numPresent;
 }
 
 /**
